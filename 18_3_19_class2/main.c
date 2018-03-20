@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdbool.h>    // 整个是一个布尔值的库
+#include <stdbool.h>    // 这个是一个布尔值的库
 
 
 /* *********** 返回三个数中的最大值 *********** */
@@ -34,8 +34,8 @@ void exchangeBox() {
     printf("Exchange first(1)=%d, last(2)=%d",firstBox, lastBox);
 }
 
-/* *********** 冒泡 *********** */
-/* 冒泡程序 */
+/* *********** 三个数进行从大到小的排序 *********** */
+/* 通用的冒泡程序 */
 void sortArrayAndPrint(int array[], int arrayLength) {
 
     int temp, tempExchange, indexI, indexJ;
@@ -73,13 +73,34 @@ void sortThreeNumber() {
 }
 
 
+/* *********** 100-200之间的素数 *********** */
+void filterPrimeNumber(int array[], int arrayLength) {
+    int temp;
+    for (int i = 0; i < arrayLength; ++i) {
+        temp = array[i];
+        if (temp%2 != 0) {
+            printf("\nprime Num : %d",temp);
+        }
+    }
+}
+
+void getPrimeNumbers() {
+    int length = 100;
+    int primeArray[length];
+    int startNumber = length;
+    for (int i = 0; i < length+1; ++i) {
+        primeArray[i] = startNumber;
+        startNumber ++;
+    }
+    filterPrimeNumber(primeArray, length);
+}
+
+
 
 int main() {
 //    whichMaxInThreeNumber();
 //    exchangeBox();
 //    sortThreeNumber();
+    getPrimeNumbers();
     return 0;
 }
-
-
-
