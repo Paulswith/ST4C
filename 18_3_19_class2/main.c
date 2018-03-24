@@ -38,21 +38,18 @@ void exchangeBox() {
 /* 通用的冒泡程序 */
 void sortArrayAndPrint(int array[], int arrayLength) {
 
-    int temp, tempExchange, indexI, indexJ;
+    int temp, tempExchange;
     bool exchanged;
     for (int i = 0; i < arrayLength; ++i) {        // 1. 第一个外循环是循环比对的次数
         exchanged = 0;
-        temp = array[i];
-        indexI = i;
         for (int j = i+1; j < arrayLength; ++j) {  // 2. 第二个循环, 拿到每次循环的数, 进行一轮比对
-            if (array[j] > temp) {                 // 3. 如果比我取出来的数字大, 我就标记需要交换排序
-                indexJ = j;
+            if (array[j] > array[i]) {                 // 3. 如果比我取出来的数字大, 我就标记需要交换排序
                 exchanged = 1;
             }
             if (exchanged) {                           // 执行交换排序
-                tempExchange = array[indexI];
-                array[indexI] = array[indexJ];
-                array[indexJ] = tempExchange;
+                tempExchange = array[i];
+                array[i] = array[j];
+                array[j] = tempExchange;
             }
         }
 
