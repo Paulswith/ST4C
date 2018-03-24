@@ -49,12 +49,13 @@ void sortArrayAndPrint(int array[], int arrayLength) {
                 indexJ = j;
                 exchanged = 1;
             }
+            if (exchanged) {                           // 执行交换排序
+                tempExchange = array[indexI];
+                array[indexI] = array[indexJ];
+                array[indexJ] = tempExchange;
+            }
         }
-        if (exchanged) {                           // 执行交换排序
-            tempExchange = array[indexI];
-            array[indexI] = array[indexJ];
-            array[indexJ] = tempExchange;
-        }
+
     }
     // 输出
     for (int k = 0; k < arrayLength; ++k) {
@@ -64,12 +65,12 @@ void sortArrayAndPrint(int array[], int arrayLength) {
 
 void sortThreeNumber() {
     // 先赋值这三个数
-    int array[3];   // 数组长度
+    int array[10];   // 数组长度
     printf("type 3 number");
-    for (int i = 0; i < 3; ++i) {
+    for (int i = 0; i < 10; ++i) {
         scanf("%d",&array[i]);
     }
-    sortArrayAndPrint(array, 3);
+    sortArrayAndPrint(array, 10);
 }
 
 
@@ -100,7 +101,10 @@ void getPrimeNumbers() {
 int main() {
 //    whichMaxInThreeNumber();
 //    exchangeBox();
-//    sortThreeNumber();
-    getPrimeNumbers();
+    sortThreeNumber();
+//    getPrimeNumbers();
     return 0;
 }
+
+
+
